@@ -11,13 +11,14 @@ This is a redmine plugin that allows you to change the wiki format.
 You can simply specify the desired format by using a designated syntax within the wiki text.
 Only the first 20 characters of the syntax will be interpreted.
 
-formatting=textile
-formatting=markdown
-formatting=common_mark
+* formatting=textile
+* formatting=markdown
+* formatting=common_mark
 
-or
+If no specific format is specified, it will be displayed using the system default format.
 
-formatting=none
+Or you can cancel the applied format by using, 
+* formatting=none
 
 ![sample screenshot](./images/screenshot01.png "overview")
 
