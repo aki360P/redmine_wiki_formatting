@@ -32,10 +32,16 @@ module RwfApplicationHelperPatch
     macros = catch_macros(text)
 
     ### plugin customize part ###
+    pos0 = text.index("formatting=none")
     pos1 = text.index("formatting=textile")
     pos2 = text.index("formatting=markdown")
     pos3 = text.index("formatting=common_mark")
-    if not pos1.nil? then
+    if not pos0.nil? then
+      if pos0 < 20 then
+        text.slice!("formatting=none")
+        text = h(text)
+      end
+    elsif not pos1.nil? then
       if pos1 < 20 then
         formatting = "textile"
         text.slice!("formatting=textile")
